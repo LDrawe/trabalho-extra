@@ -13,7 +13,7 @@ public class ClienteRepository {
     private ClienteRepository() {
     }
 
-    public ClienteRepository getInstance() {
+    public static ClienteRepository getInstance() {
         if (repository == null) {
             repository = new ClienteRepository();
         }
@@ -29,7 +29,11 @@ public class ClienteRepository {
         return bancoDeDados;
     }
 
-    public Optional<Cliente> buscarPorId(Integer id) {
-        return Optional.ofNullable(bancoDeDados.get(id));
+    public Cliente buscarPorId(Integer id) {
+        if (id > bancoDeDados.size() - 1 || id < 0) {
+            return null;
+        }
+
+        return bancoDeDados.get(id);
     }
 }

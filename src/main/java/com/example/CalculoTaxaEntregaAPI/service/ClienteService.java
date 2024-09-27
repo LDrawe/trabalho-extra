@@ -22,4 +22,8 @@ public class ClienteService {
     public List<Cliente> listarClientes() {
         return clienteRepository.buscarTodos();
     }
+
+    public Cliente buscarCliente(Integer clientID) {
+        return clienteRepository.buscarPorId(clientID);
+    }
 }

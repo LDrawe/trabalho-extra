@@ -2,6 +2,7 @@ package com.example.CalculoTaxaEntregaAPI.pedido;
 
 public class Cliente {
 
+    private Integer id;
     private String nome;
     private String tipo;
     private double fidelidade;
@@ -9,13 +10,18 @@ public class Cliente {
     private String bairro;
     private String cidade;
 
-    public Cliente(String nome, String tipo, double fidelidade, String logradouro, String bairro, String cidade) {
+    public Cliente(Integer id, String nome, String tipo, double fidelidade, String logradouro, String bairro, String cidade) {
+        this.id = id;
         this.nome = nome;
         this.tipo = tipo;
         this.fidelidade = fidelidade;
         this.logradouro = logradouro;
         this.bairro = bairro;
         this.cidade = cidade;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getNome() {
