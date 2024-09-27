@@ -7,8 +7,18 @@ import java.util.*;
 
 @Repository
 public class ClienteRepository {
-
+    private static ClienteRepository repository;
     private final ArrayList<Cliente> bancoDeDados = new ArrayList<>();
+
+    private ClienteRepository() {
+    }
+
+    public ClienteRepository getInstance() {
+        if (repository == null) {
+            repository = new ClienteRepository();
+        }
+        return repository;
+    }
 
     public Cliente salvar(Cliente cliente) {
         bancoDeDados.add(cliente);
