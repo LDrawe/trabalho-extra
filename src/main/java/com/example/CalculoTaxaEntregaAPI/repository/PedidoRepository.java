@@ -8,20 +8,18 @@ import java.util.*;
 @Repository
 public class PedidoRepository {
 
-    private final Map<Long, Pedido> bancoDeDados = new HashMap<>();
-    private long ultimoId = 0;
+    private final ArrayList<Pedido> bancoDeDados = new ArrayList<>();
 
     public Pedido salvar(Pedido pedido) {
-        ultimoId++;
-        bancoDeDados.put(ultimoId, pedido);
+        bancoDeDados.add(pedido);
         return pedido;
     }
 
     public List<Pedido> buscarTodos() {
-        return new ArrayList<>(bancoDeDados.values());
+        return bancoDeDados;
     }
 
-    public Optional<Pedido> buscarPorId(Long id) {
+    public Optional<Pedido> buscarPorId(Integer id) {
         return Optional.ofNullable(bancoDeDados.get(id));
     }
 }

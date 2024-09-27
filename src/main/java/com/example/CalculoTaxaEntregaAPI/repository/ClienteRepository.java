@@ -8,20 +8,18 @@ import java.util.*;
 @Repository
 public class ClienteRepository {
 
-    private final Map<Long, Cliente> bancoDeDados = new HashMap<>();
-    private long ultimoId = 0;
+    private final ArrayList<Cliente> bancoDeDados = new ArrayList<>();
 
     public Cliente salvar(Cliente cliente) {
-        ultimoId++;
-        bancoDeDados.put(ultimoId, cliente);
+        bancoDeDados.add(cliente);
         return cliente;
     }
 
     public List<Cliente> buscarTodos() {
-        return new ArrayList<>(bancoDeDados.values());
+        return bancoDeDados;
     }
 
-    public Optional<Cliente> buscarPorId(Long id) {
+    public Optional<Cliente> buscarPorId(Integer id) {
         return Optional.ofNullable(bancoDeDados.get(id));
     }
 }
