@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "1790a808-d891-441c-b122-f8f7388d56fa",
+		"name": "Trabalho-Clayton",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36845236"
+	},
+	"item": [
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Criar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"clienteId\": 0,\r\n  \"data\": \"2024-09-27\",\r\n  \"itens\": [\r\n    {\r\n      \"nome\": \"Pizza\",\r\n      \"quantidade\": 2,\r\n      \"valorUnitario\": 35.50,\r\n      \"tipo\": \"Alimentação\"\r\n    },\r\n    {\r\n      \"nome\": \"Curso de Inglês\",\r\n      \"quantidade\": 1,\r\n      \"valorUnitario\": 500.00,\r\n      \"tipo\": \"Educação\"\r\n    },\r\n    {\r\n      \"nome\": \"Cinema\",\r\n      \"quantidade\": 3,\r\n      \"valorUnitario\": 25.00,\r\n      \"tipo\": \"Lazer\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedidos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Processar Descontos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"clienteId\": 1,\r\n  \"data\": \"2024-09-27\",\r\n  \"itens\": [\r\n    {\r\n      \"nome\": \"Pizza\",\r\n      \"quantidade\": 2,\r\n      \"valorUnitario\": 35.50,\r\n      \"tipo\": \"Alimentação\"\r\n    },\r\n    {\r\n      \"nome\": \"Curso de Inglês\",\r\n      \"quantidade\": 1,\r\n      \"valorUnitario\": 500.00,\r\n      \"tipo\": \"Educação\"\r\n    },\r\n    {\r\n      \"nome\": \"Cinema\",\r\n      \"quantidade\": 3,\r\n      \"valorUnitario\": 25.00,\r\n      \"tipo\": \"Lazer\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedidos/0/processar-descontos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"0",
+								"processar-descontos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descontos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"clienteId\": 1,\r\n  \"data\": \"2024-09-27\",\r\n  \"itens\": [\r\n    {\r\n      \"nome\": \"Pizza\",\r\n      \"quantidade\": 2,\r\n      \"valorUnitario\": 35.50,\r\n      \"tipo\": \"Alimentação\"\r\n    },\r\n    {\r\n      \"nome\": \"Curso de Inglês\",\r\n      \"quantidade\": 1,\r\n      \"valorUnitario\": 500.00,\r\n      \"tipo\": \"Educação\"\r\n    },\r\n    {\r\n      \"nome\": \"Cinema\",\r\n      \"quantidade\": 3,\r\n      \"valorUnitario\": 25.00,\r\n      \"tipo\": \"Lazer\"\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pedidos/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pedidos",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Criar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Caio\",\r\n  \"tipo\": \"Prata\",\r\n  \"fidelidade\": 100.0,\r\n  \"logradouro\": \"Rua A\",\r\n  \"bairro\": \"Centro\",\r\n  \"cidade\": \"São Paulo\",\r\n  \"preco\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
