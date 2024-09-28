@@ -1,5 +1,6 @@
 package com.example.CalculoTaxaEntregaAPI.controller;
 
+import com.example.CalculoTaxaEntregaAPI.DTO.PedidoDTO;
 import com.example.CalculoTaxaEntregaAPI.pedido.Cliente;
 import com.example.CalculoTaxaEntregaAPI.pedido.Pedido;
 import com.example.CalculoTaxaEntregaAPI.repository.ClienteRepository;
@@ -22,12 +23,12 @@ public class PedidoController {
     }
 
     @PostMapping
-    public ResponseEntity<Pedido> criarPedido(@RequestBody Pedido pedido) {
-        Cliente cliente = ClienteRepository.getInstance().buscarPorId(pedido.getCliente().getId());
+    public ResponseEntity<Pedido> criarPedido(@RequestBody PedidoDTO pedidoDTO) {
+        Cliente cliente = ClienteRepository.getInstance().buscarPorId(pedidoDTO.clienteId());
         if (cliente == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Handle not found case
-            
-        Pedido novoPedido = pedidoService.criarPedido(pedido);
+
+        Pedido novoPedido = pedidoService.criarPedido(new Pedido(pedidoDTO.data(), cliente));
         return new ResponseEntity<>(novoPedido, HttpStatus.CREATED);
     }
 }
