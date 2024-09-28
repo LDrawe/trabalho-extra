@@ -13,7 +13,7 @@ public class PedidoRepository {
     private PedidoRepository() {
     }
 
-    public PedidoRepository getInstance() {
+    public static PedidoRepository getInstance() {
         if (repository == null) {
             repository = new PedidoRepository();
         }
@@ -29,7 +29,7 @@ public class PedidoRepository {
         return bancoDeDados;
     }
 
-    public Optional<Pedido> buscarPorId(Integer id) {
-        return Optional.ofNullable(bancoDeDados.get(id));
+    public Pedido buscarPorId(Integer id) {
+        return bancoDeDados.get(id);
     }
 }
