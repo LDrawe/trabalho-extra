@@ -1,3 +1,12 @@
+## Integrantes do grupo
+
+Kaio stefan Campos Nunes
+
+Caio Cordeiro Jácome
+
+Eduardo de Mello Portilho
+
+
 # API de Cadastro de Clientes e Pedidos
 
 Esta API RESTful realiza o cadastro de clientes, pedidos e aplica regras de desconto nas taxas de entrega. A API foi desenvolvida em Java com Spring Boot, empacotada em um container Docker e está disponível no Docker Hub.
@@ -18,13 +27,13 @@ Clone o repositório com o código-fonte da API:
 git clone https://github.com/LDrawe/trabalho-extra.git
 cd trabalho-extra
 ```
-## 2. Construindo e Executando a Imagem Docker
+## 2. Baixando e Executando a Imagem Docker do Docker Hub
 
-Para construir a imagem Docker e executar a API, use os seguintes comandos:
+Para baixar a imagem Docker do Docker Hub e executar a API, use os seguintes comandos:
 
 ```bash
-docker build -t nome-da-imagem .
-docker run -p 8080:8080 nome-da-imagem
+docker pull kaiostefan/trabalho-extra:version1.0
+docker run -p 8080:8080 kaiostefan/trabalho-extra:version1.0
 ```
 
 ## Consumo da API com Postman
