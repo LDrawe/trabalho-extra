@@ -19,11 +19,11 @@ public class ClienteService {
         return clienteRepository.salvar(cliente);
     }
 
-    public List<Cliente> listarClientes() {
-        return clienteRepository.buscarTodos();
-    }
-
     public Cliente buscarCliente(Integer clientID) {
         return clienteRepository.buscarPorId(clientID);
+    }
+
+    public List<Cliente> listarClientes() {
+        return clienteRepository.buscarTodos();
     }
 }

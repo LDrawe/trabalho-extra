@@ -18,6 +18,19 @@ public class Item {
         this.tipo = tipo;
     }
 
+     // Getters
+     public String getNome() {
+        return nome;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public double getValorUnitario() {
+        return valorUnitario;
+    }
+
     public double getValorTotal() {
         return quantidade * valorUnitario;
     }
