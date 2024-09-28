@@ -29,7 +29,7 @@ public class ClienteController {
         if (cliente == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Handle not found case
 
-        return new ResponseEntity<>(cliente, HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PostMapping

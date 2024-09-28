@@ -21,6 +21,7 @@ public class ClienteRepository {
     }
 
     public Cliente salvar(Cliente cliente) {
+        cliente.setId(bancoDeDados.size());
         bancoDeDados.add(cliente);
         return cliente;
     }
@@ -30,7 +31,7 @@ public class ClienteRepository {
     }
 
     public Cliente buscarPorId(Integer id) {
-        if (id > bancoDeDados.size() - 1 || id < 0) {
+        if (id > bancoDeDados.size() || bancoDeDados.size() == 0 || id < 0) {
             return null;
         }
 

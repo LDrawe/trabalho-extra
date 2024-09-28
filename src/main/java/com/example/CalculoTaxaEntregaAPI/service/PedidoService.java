@@ -9,17 +9,17 @@ import java.util.List;
 @Service
 public class PedidoService {
 
-    private final PedidoRepository PedidoRepository;
+    private final PedidoRepository pedidoRepository;
 
-    public PedidoService(PedidoRepository pedidoRepository) {
-        this.PedidoRepository = pedidoRepository;
+    public PedidoService() {
+        this.pedidoRepository = PedidoRepository.getInstance();
     }
 
     public Pedido criarPedido(Pedido pedido) {
-        return PedidoRepository.salvar(pedido);
+        return pedidoRepository.salvar(pedido);
     }
 
     public List<Pedido> listarPedidos() {
-        return PedidoRepository.buscarTodos();
+        return pedidoRepository.buscarTodos();
     }
 }

@@ -20,6 +20,10 @@ public class Cliente {
         this.cidade = cidade;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }
