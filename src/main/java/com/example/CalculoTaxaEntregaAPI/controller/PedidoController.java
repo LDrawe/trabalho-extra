@@ -28,7 +28,7 @@ public class PedidoController {
         if (cliente == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND); // Handle not found case
 
-        Pedido novoPedido = pedidoService.criarPedido(new Pedido(pedidoDTO.data(), cliente));
-        return new ResponseEntity<>(novoPedido, HttpStatus.CREATED);
+        pedidoService.criarPedido(new Pedido(pedidoDTO.data(), cliente));
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
